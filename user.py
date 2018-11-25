@@ -11,11 +11,11 @@ class _users_(object):
         self.userFile = open("users.json",self.mode)
         self.users = json.load(self.userFile)
 
-    def addUser(self):
+    """def addUser(self):
         uname = input()
         email = input()
         new = {"username": uname,"email": email}
-        json.dump(new, self.userFile)
+        json.dump(new, self.userFile)"""
     
     def showUsers(self):
         for user in self.users:
