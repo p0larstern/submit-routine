@@ -22,8 +22,14 @@ class _users_(object):
             for param in user:
                 print("%s : %s" % (param,user[param]))
 
+    def closeFile(self):
+        self.userFile.close()
+        if self.userFile.closed :
+            del self.userFile
+
 if __name__ == "__main__":
     current = _users_("r")
     current.openFile()
     #current.addUser()
     current.showUsers()
+    current.closeFile()
