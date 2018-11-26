@@ -1,4 +1,4 @@
-- [ ] -o -original
+- [ ] -s --same
   - the solution file have the name as the code of the question
 
 > Checked options are working or will be included in future versions
