@@ -21,11 +21,13 @@ class userUtil(object):
         self.fileObj = None
 
     def saveUser(self):
+        self.openFile("wb")
         pickle.dump(self.userObj,self.fileObj)
         self.closeFile()
         print("User credentials saved.")
 
     def loadUser(self):
+        self.openFile("rb")
         if self.fileObj == None :
             print("No data file available!")
             return None
