@@ -5,10 +5,10 @@ from selenium.webdriver.support import expected_conditions as EC
 
 class site(object):
 
-    def __init__(self):
+    def __init__(self,head):
         self.url = "http://codechef.com"
         self.options = Options()
-        self.options.headless = True
+        self.options.headless = head
         self.driver = None
 
     def start(self):
@@ -24,18 +24,7 @@ class site(object):
         self.loginBtn.click()
         
     def getQ(self, qcode):
-        self.driver.get(self.url+"/problems/"+qcode.upper())
+        self.driver.get(self.url+"/submit/"+qcode.upper())
 
     def quit(self):
         self.driver.quit()
-"""
-options = Options()
-options.headless = False
-driver = webdriver.Firefox(options=options)
-driver.get("http://codechef.com/node")
-print("Headless Firefox Initialized")
-print("Done") 
-input('Press anything to quit') 
-print("Finished") 
-driver.quit()
-"""

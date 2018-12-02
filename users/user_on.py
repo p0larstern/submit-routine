@@ -5,13 +5,15 @@ class user(object):
     def __init__(self):
         self.username = None
         self.password = None
+        self.language = None
 
     def getStuff(self):
-        return (self.username,self.password)
+        return (self.username,self.password,self.language)
 
     def putStuff(self):
         self.username = input("username? ")
         self.password = getpass.getpass(prompt="password? ")
+        self.language = input("language no.? ")
 
 class userUtil(object):
 
@@ -39,3 +41,8 @@ class userUtil(object):
     def closeFile(self):
         self.fileObj.close()
         self.fileObj = None
+
+new1 = user()
+new1.putStuff()
+cc = userUtil(new1)
+cc.saveUser()
