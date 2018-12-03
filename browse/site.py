@@ -23,8 +23,22 @@ class site(object):
         self.loginBtn = self.driver.find_element_by_name("op")
         self.loginBtn.click()
         
-    def getQ(self, qcode):
-        self.driver.get(self.url+"/submit/"+qcode.upper())
-
     def quit(self):
         self.driver.quit()
+
+    def submit(self, qcode, srcPath, lang):
+        self.driver.get(self.url+"/submit/"+qcode.upper())
+        self.fileEle = self.driver.find_element_by_id("edit-sourcefile")
+        self.fileEle.send_keys(srcPath)
+       
+        self.langEle = self.driver.find_element_by_name("language")
+        for option in self.langEle.find_elements_by_tag_name('option'):
+            if option.value == lang :
+                option.click()
+                break
+        
+        self.submitBtn = self.driver.find_element_by_name("op")
+        self.submitBtn.click()
+
+    def logout(self):
+        self.driver.get(self.url+"/logout")
