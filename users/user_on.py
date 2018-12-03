@@ -41,8 +41,3 @@ class userUtil(object):
     def closeFile(self):
         self.fileObj.close()
         self.fileObj = None
-
-new1 = user()
-new1.putStuff()
-cc = userUtil(new1)
-cc.saveUser()
